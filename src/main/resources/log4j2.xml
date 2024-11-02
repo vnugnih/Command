@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns="https://logging.apache.org/xml/ns"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="https://logging.apache.org/xml/ns https://logging.apache.org/xml/ns/log4j-config-2.xsd">
+
+    <Appenders>
+        <Console name="console-error" target="SYSTEM_ERR">
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %-5level %class.%method:%line %message%n"/>\
+            <LevelRangeFilter minLevel="ERROR" maxLevel="ERROR"/>
+        </Console>
+        <Console name="console-info" target="SYSTEM_OUT">
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %-5level %message%n"/>\
+            <LevelRangeFilter minLevel="INFO" maxLevel="INFO"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="console-error"/>
+            <AppenderRef ref="console-info"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
